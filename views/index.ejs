@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <h1>Taco Town 🌮</h1>
+
+    <form action="/ingredients" method="POST">
+
+        <button type="submit" value="Chicken Taco" name="choice">chicken taco</button>
+        <button type="submit" value="Omlette" name="choice">omlette</button>
+        <button type="submit" value="Maggy" name="choice">maggy</button>
+
+    </form>
+
+
+    <!-- output -->
+
+
+    <div id="recipeContainer" class="hidden">
+          <% if(locals.item) { %>
+
+
+              <h1>Item Name: <%= item.name %></h1>
+
+              <h2>Ingredients are:</h2>
+              <ul id="ingredientsList">
+                  <% for(let i=0;i<item.ingredients.length;i++) { %>
+
+                      <li><%= item.ingredients[i] %></li>
+                  
+                  
+                  <% }%> 
+
+
+
+              </ul>
+
+          <%}else{ %>
+
+              <h2>Please Click on one of the following button</h2>
+
+          <% } %>
+
+        
+
+  </div>
+  </body>
+</html>
